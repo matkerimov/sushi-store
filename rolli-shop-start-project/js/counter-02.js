@@ -15,9 +15,6 @@ window.addEventListener('click', function (event) {
     }
 
 
-
-
-
     // Проверяем является ли елемент кнопкой Плюс
     if (event.target.dataset.action === 'plus'){
         counter.innerText = ++counter.innerText
