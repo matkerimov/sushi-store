@@ -65,7 +65,10 @@ window.addEventListener('click', function (event) {
             //    Отабразим товар в корзине
             cartWrapper.insertAdjacentHTML('beforeend', cardItemHtml)
         }
+
+    // Сбрасываем счетчик добавленного товара на "1"
+    card.querySelector('[data-counter]').innerText = 1
+
+
     }
-
-
 })
