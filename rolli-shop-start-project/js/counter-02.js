@@ -33,13 +33,15 @@ window.addEventListener('click', function (event) {
         if (parseInt(counter.innerText) > 1) {
             // Изменяем текст в счетчике уменьшая его на 1
             counter.innerText = --counter.innerText
-        } else if (event.target.closest('.cart-wrapper') && parseInt(counter.innerText) === 1{
+
+        } else if (event.target.closest('.cart-wrapper') && parseInt(counter.innerText) === 1) {
             // Проверка на товар  который находится в корзине
             console.log("in cart")
             // Удаляем товар из корзины
             event.target.closest('.cart-item').remove()
 
-
+            // Отаброжение статуса корзины Пустая / Полная
+            toggleCartStatus()
         }
 
 

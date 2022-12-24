@@ -25,7 +25,7 @@ window.addEventListener('click', function (event) {
         // Проверять есть ли такой товар в корзине
         // cartWrapper.querySelector('[data-id="' + productInfo.id + '"]')
         const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`)
-        console.log(itemInCart)
+
         // Если товар есть в корзине
         if (itemInCart) {
             const counterElement = itemInCart.querySelector('[data-counter]')
@@ -69,6 +69,7 @@ window.addEventListener('click', function (event) {
     // Сбрасываем счетчик добавленного товара на "1"
     card.querySelector('[data-counter]').innerText = 1
 
-
+        // Отаброжение статуса корзины Пустая / Полная
+        toggleCartStatus()
     }
 })
