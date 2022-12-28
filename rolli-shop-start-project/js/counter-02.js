@@ -22,13 +22,6 @@ window.addEventListener('click', function (event) {
     // Проверяем является ли елемент кнопкой Минус
     if (event.target.dataset.action === 'minus') {
 
-        // // Проверка на товар  который находится в корзине
-        // if (event.target.closest('.cart-wrapper') && parseInt(counter.innerText) === 1) {
-        //     console.log("in cart")
-        //     // Удаляем товар из корзины
-        //     event.target.closest('.cart-item').remove()
-        // }
-
         // Проверяем чтобы счетчик был больше 1
         if (parseInt(counter.innerText) > 1) {
             // Изменяем текст в счетчике уменьшая его на 1
@@ -42,8 +35,22 @@ window.addEventListener('click', function (event) {
 
             // Отаброжение статуса корзины Пустая / Полная
             toggleCartStatus()
+
+            // Пересчет общей стоимости в корзине
+            calcCartPrice()
+
         }
 
 
     }
+
+
+    // Проверяем клик на + или - внутри корзины
+    if (event.target.hasAttribute('data-action') && event.target.closest('.cart-wrapper')){
+
+        // Пересчет общей стоимости в корзине
+        calcCartPrice()
+    }
+
+
 })
